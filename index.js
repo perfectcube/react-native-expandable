@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Animated } from 'react-native';
+import PropTypes from 'prop-types';
 
 /**
  * Expandable container for react-native
