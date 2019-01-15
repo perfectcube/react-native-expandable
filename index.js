@@ -5,6 +5,21 @@ import { View, Text, TouchableOpacity, Animated } from 'react-native';
  * Expandable container for react-native
  */
 export default class Expandable extends React.Component {
+
+  // prop type warnings
+  static propTypes = {
+    // the height of the toggle button
+    buttonHeight: PropTypes.number,
+    // the width of the toggle button
+    buttonWidth: PropTypes.number,
+  }
+
+  // defaults for props
+  static defaultProps = {
+    buttonHeight: 20,
+    buttonWidth: 20,
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -93,8 +108,8 @@ export default class Expandable extends React.Component {
             <Animated.Image
               source={require('./arrow_up.png')}
               style={{
-                width: 20,
-                height: 20,
+                width: this.props.buttonWidth,
+                height: this.props.buttonHeight,
                 opacity: this.state.iconAnimation.interpolate({
                   inputRange: [0, 0.5, 1],
                   outputRange: [1, 0.5, 1]
